@@ -1,47 +1,90 @@
-# Student Management – Java Console Project
+# Java OOP Practice – Student Management (Console + GUI)
 
-This is a simple Java console application that manages a student's situation, including:
+This repository contains a simple Java project built for practicing basic OOP concepts.  
+The project is implemented in **two different versions**:
+
+---
+
+## 🎯 Project Overview
+
+The goal of the project is to manage a student's academic status, including:
 - number of absences
 - laboratory grade
 - exam grade
 - arithmetic average
-- special status check (too many absences or grades below passing limit)
-- final grade calculation based on weight percentages
+- eligibility to pass the course
+- final grade calculation based on weighted percentages
 
-The program runs in the terminal and provides an interactive menu.
+The same logic is implemented twice:
+1. **Console Application (CLI)** – fully text-based interaction  
+2. **Graphical User Interface (GUI)** – implemented using Java Swing
 
----
-
-## 📌 Features
-
-### ✔ Add Absences  
-The user can input the number of absences for the student.
-
-### ✔ Set Laboratory / Exam Grades  
-Both grades can be updated at any time during execution.
-
-### ✔ Display Student Status  
-Shows:
-- absences  
-- laboratory grade  
-- exam grade  
-- arithmetic average  
-
-### ✔ Special Status Check  
-The program determines whether the student:
-- has too many absences (≥ 8)
-- has grades below the passing limit (grade < 5)
-
-If everything is valid, the final grade is computed based on:
-- laboratory: **60%**
-- exam: **40%**
+Both versions use the same underlying object-oriented model (the `Student` class).
 
 ---
 
-## ▶ How to Run
+## 🖥️ Console Version (CLI)
 
-Compile and run the program using the terminal:
+The console version allows the user to:
 
+- Enter absences  
+- Set lab grade  
+- Set exam grade  
+- Display student status  
+- Check special status (too many absences or grades below minimum)  
+
+The application uses a simple interactive menu in the terminal.
+
+---
+
+## 🪟 GUI Version (Swing)
+
+The GUI version features the same functionality as the console version, but with a graphical interface built using **Java Swing**.
+
+Users can:
+- Add absences  
+- Set lab and exam grades  
+- View student status  
+- Check special status  
+- See all results updated inside a scrollable text area
+
+The GUI version does **not** require JavaFX and works with any standard Java installation.
+
+---
+
+## 📦 Object-Oriented Structure
+
+Both versions share the same core OOP logic:
+
+### `Student.java`  
+Contains the student data and business logic:
+- storing grades and absences  
+- updating values  
+- calculating averages and final grades  
+- checking special conditions  
+
+### `StudentGUI.java`  
+Graphical interface built with Swing components:
+- Buttons  
+- Text fields  
+- Labels  
+- Text area output  
+
+### `exercitiu.java` (console version)  
+Implements the terminal menu and user input logic using `Scanner`.
+
+---
+
+## 🚀 How to Run
+
+### **Console version**
+Compile and run:
 ```bash
 javac exercitiu.java
 java exercitiu
+```
+
+### **GUI version**
+```bash
+javac Student.java StudentGUI.java
+java StudentGUI
